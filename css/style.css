@@ -1,0 +1,31 @@
+@media print {
+  .print\:hidden,
+  .edit-icon {
+    display: none !important;
+  }
+  input {
+    border: none !important;
+    background: transparent !important;
+  }
+}
+/* Hide no-print-share ONLY during share, not on print */
+.no-print-share.hide-for-share {
+  display: none !important;
+}
+
+/* Improved input style for BILL NO, Cash Memo No, Date */
+.input-user-friendly {
+  background-color: #f0f4f8; /* subtle light blue */
+  border: 1.5px solid #3b82f6; /* Tailwind blue-500 */
+  border-radius: 0.375rem;
+  padding: 2px 2px;
+  transition: box-shadow 0.2s ease-in-out;
+  font-weight: 500;
+  text-align: center;
+  max-width: 160px;
+}
+.input-user-friendly:focus {
+  outline: none;
+  box-shadow: 0 0 5px #3b82f6;
+  background-color: #e0efff;
+}
