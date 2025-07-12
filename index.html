@@ -20,88 +20,82 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-white text-black font-sans">
-    <div
-      id="invoice"
-      class="container mx-auto max-w-screen-md my-10 p-6 bg-white"
-    >
+    <div id="invoice" class="container mx-auto max-w-screen-md p-2 bg-white">
       <!-- Header -->
-      <div class="flex items-center justify-start space-x-5 mb-4 mt-6">
-        <img class="w-[17%] rounded-full" src="./images/logo.jpg" alt="Logo" />
+      <div class="flex items-center justify-start space-x-2">
+        <img class="w-[12%] rounded-full" src="./images/logo.jpg" alt="Logo" />
         <div>
-          <h1 class="text-4xl text-[#C22E1E] font-semibold">
+          <h1 class="text-xl text-[#C22E1E] font-semibold">
             M/S SHAMMI CONSTRUCTION
           </h1>
-          <h2 class="text-2xl text-[#1F3E66]">
-            Importer and Seller of Local and foreign Marble, Granite,
-          </h2>
-          <h2 class="text-2xl text-[#1F3E66]">
-            Mosaic , Tiles. Sanitary all Materials.
+          <h2 class="text-[#1F3E66]">
+            Importer and Seller of Local and foreign Marble, Granite, Mosaic ,
+            Tiles. Sanitary all Materials.
           </h2>
         </div>
       </div>
-
-      <h3 class="text-xl text-[#C22E1E] text-center">
-        Gulshan - , Dhaka, Bangladesh
+      <h3 class="text-xs text-[#C22E1E] text-center">
+        Gulshan 1 - , Dhaka, Bangladesh
       </h3>
-      <h4 class="text-xl text-[#1F3E66] text-center">
+      <h4 class="text-xs text-[#1F3E66] text-center">
         Mobile No: 017XXXXXXXX , 018XXXXXXXX.
       </h4>
 
       <!-- BILL NO -->
-      <div class="text-center mt-4 no-print-share">
+      <div class="text-center no-print-share">
         <div class="inline-flex items-center space-x-2 justify-center">
-          <span class="font-semibold">BILL NO:</span>
+          <span class="font-semibold text-xs">BILL NO:</span>
           <input
             id="bill-no"
-            type="text"
+            type="number"
             value="01"
-            class="input-user-friendly w-8"
+            class="input-user-friendly w-14"
             aria-label="Bill Number"
           />
         </div>
       </div>
 
       <!-- Cash Memo No and Date side by side -->
-      <div
-        class="mt-6 space-y-2 no-print-share flex justify-between items-center"
-      >
+      <div class="space-y-2 no-print-share flex justify-between items-center">
         <div class="flex items-center space-x-2 justify-center">
-          <label for="cash-memo-no" class="font-semibold">Cash Memo No:</label>
+          <label for="cash-memo-no" class="font-semibold text-xs"
+            >Cash Memo No:</label
+          >
           <input
             id="cash-memo-no"
-            type="text"
+            type="number"
             value="01"
-            class="input-user-friendly italic w-10"
+            class="input-user-friendly italic w-14"
             aria-label="Cash Memo Number"
           />
         </div>
       </div>
 
       <!-- Company Info -->
-      <div class="mt-6 space-y-2 flex justify-between items-center">
-        <h2>Company Name: HomeTrust Living Ltd</h2>
-        <h3>Mobile : 019XXXXXXXX</h3>
+      <div class="space-y-2 flex justify-between items-center">
+        <h2 class="text-xs">Company Name: HomeTrust Living Ltd</h2>
+        <h3 class="text-xs">Mobile : 019XXXXXXXX</h3>
       </div>
 
       <div>
-        <h2>Gulshan 1, Dhaka Bangladesh</h2>
+        <h2 class="text-xs">Gulshan 1, Dhaka Bangladesh</h2>
       </div>
 
       <!-- date -->
       <div class="flex items-center space-x-2 justify-center">
-        <label for="date" class="font-semibold">Date:</label>
+        <label for="date" class="font-semibold text-xl">Date:</label>
         <input
           id="date"
           type="date"
-          class="input-user-friendly w-40"
+          class="input-user-friendly w-40 bg-slate-300"
           aria-label="Date"
         />
       </div>
 
       <!-- Table -->
-      <div class="mt-6 overflow-x-auto">
+      <div class="mt-2 overflow-x-auto">
         <table class="table w-full border">
-          <thead class="bg-gray-200">
+          <thead class="bg-gray-200 text-black text-xs">
             <tr>
               <th>SL NO</th>
               <th>Name of Materials</th>
@@ -111,7 +105,7 @@
               <th class="print:hidden">Action</th>
             </tr>
           </thead>
-          <tbody id="table-body">
+          <tbody id="table-body" class="text-black text-xs">
             <tr>
               <th>01</th>
               <td contenteditable="true">Item Name</td>
@@ -126,7 +120,7 @@
               <td></td>
               <td class="print:hidden">
                 <i
-                  class="fa-solid fa-trash text-red-600 cursor-pointer"
+                  class="fa-solid fa-trash text-red-600 cursor-pointer text-xs"
                   onclick="deleteRow(this)"
                 ></i>
               </td>
@@ -134,37 +128,37 @@
             <tr id="total-row">
               <th></th>
               <td></td>
-              <td class="font-semibold">Total</td>
-              <td class="font-semibold">Amount:</td>
+              <td class="font-semibold text-xs text-black">Total</td>
+              <td class="font-semibold text-black text-xs">Amount:</td>
               <td id="total-amount" class="font-semibold"></td>
               <td class="print:hidden"></td>
             </tr>
           </tbody>
         </table>
 
-        <h2 class="font-semibold my-16">
-          Taka: <span class="italic" id="amount-in-words"></span>
+        <h2 class="font-semibold my-2 text-xs">
+          Taka: <span class="italic text-xs" id="amount-in-words"></span>
         </h2>
       </div>
 
       <!-- Buttons -->
-      <div class="flex justify-between mt-4 print:hidden space-x-2">
+      <div class="flex justify-between mt-2 print:hidden space-x-2">
         <button
           onclick="addRow()"
-          class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+          class="px-2 py-1 bg-green-600 text-white rounded-md hover:bg-green-700 text-xs"
         >
           + Add New Item
         </button>
         <button
           onclick="window.print()"
-          class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          class="px-2 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-xs"
         >
           🖨️ Print this Page
         </button>
 
         <button
           id="share-btn"
-          class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
+          class="px-2 py-1 bg-purple-600 text-white rounded-md hover:bg-purple-700 text-xs"
           title="Share M/S SHAMMI CONSTRUCTION PDF"
         >
           📤 Share PDF
@@ -172,10 +166,10 @@
       </div>
 
       <!-- Footer -->
-      <div class="flex justify-between mt-20">
-        <h2 class="italic">Signature</h2>
-        <h2 class="italic">Sales Materials no Refund</h2>
-        <h2 class="italic">Signature</h2>
+      <div class="flex justify-between mt-10">
+        <h2 class="italic text-xs">Signature</h2>
+        <h2 class="italic text-xs">Sales Materials no Refund</h2>
+        <h2 class="italic text-xs">Signature</h2>
       </div>
     </div>
 
